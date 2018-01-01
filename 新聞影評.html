@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+    <style>
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  line-height: 1;
+  outline: 0;
+  background: transparent;
+}
+body {
+  background-color: #131313;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding-top: 330px;
+  -moz-transition: padding-top 0.5s ease;
+  -o-transition: padding-top 0.5s ease;
+  -webkit-transition: padding-top 0.5s ease;
+  transition: padding-top 0.5s ease;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  text-align: center;
+  position: relative;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index:99;
+}
+header img {
+  font-size: 42px;
+  color: #fff;
+  line-height: 230px;
+  text-transform: uppercase;
+  font-weight: 100;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+header nav {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+header nav a {
+  color: #fff;
+  display: inline-block;
+  padding: 10px 35px;
+  line-height: 1;
+  text-decoration: none;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+header nav a:hover {
+  -moz-box-shadow: 0 0 0 1px #fff;
+  -webkit-box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+h2 {
+  font-size: 34px;
+  text-transform: uppercase;
+  font-weight: 100;
+  line-height: 2;
+  color: #2c3e50;
+}
+
+p {
+  margin-bottom: 2rem;
+  line-height: 2;
+  color: #7f8c8d;
+}
+
+.wrapper {
+  width: 800px;
+  margin: 0 auto;
+}
+/* Sticky Header Style */
+/* ---------------------------------------- */
+body.sticky-header {
+  padding-top: 100px;
+  z-index:100;
+}
+body.sticky-header header {
+  height: 60px;
+  background-color: rgba(19, 19, 19, 0.8);
+  z-index:100;
+}
+body.sticky-header header h1 {
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  z-index:100;
+}
+
+ul, li {
+	        margin: 0;
+	        padding: 0;
+	        list-style: none;
+        }
+        .abgne_tab {
+	        clear: left;
+	        width: 1000px;
+	        margin: 10px 0;
+            margin-left:266px;
+            z-index:-1;
+            margin-top:101px;
+            border-radius:20px;
+        }
+        ul.tabs {
+	        width: 100%;
+	        height: 32px;
+            margin-left: 250px;
+            padding:2px;
+        }
+        ul.tabs li {
+	        float: left;
+	        height: 31px;
+	        line-height: 31px;
+	        overflow: hidden;
+	        position: relative;
+	        margin-bottom: -1px;	/* 讓 li 往下移來遮住 ul 的部份 border-bottom */
+	        border-left: none;
+	        background: #e1e1e1;
+            border-radius:10px;
+        }
+        ul.tabs li a {
+	        display: block;
+	        color: #000;
+	        text-decoration: none;
+            padding: 3px 40px;
+            font-size: 24px;
+        }
+        ul.tabs li a:hover {
+	        background: #ccc;
+        }
+        ul.tabs li.active  {
+	        background:#f4f4f4;
+            border-radius:10px;
+        }
+        ul.tabs li.active a:hover {
+	        background: #fff;
+        }
+        div.tab_container {
+	        clear: left;
+	        width: 100%;
+	        border-top: none;
+	        background:#c6c6c6;
+
+        }
+        div.tab_container .tab_content {
+	        padding: 20px;
+        }
+        div.tab_container .tab_content h2 {
+	        margin: 0 0 20px;
+        }
+        .tab_container li{
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+        .news_content{
+            display:table;
+            position:relative;
+        }
+        .foto{
+            display:table-cell;
+            position:relative;
+        }
+        .fotoinner{
+            width: 260px;
+            overflow: hidden;
+            position: relative;
+            height:160px;
+        }
+        .info_box{
+            display:table-cell;
+            vertical-align:top;
+            padding-left:20px;
+        }
+        .fotoinner img{
+            display: block;
+            margin: 0px;
+            height: auto;
+            width: 100%;
+        }
+        .tab_content li{
+            padding-top: 20px;
+        }
+        .tab_content a{
+            text-decoration:none;
+        }
+        .day{
+            font-size: 14px;
+            color: #a4a4a4;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .info_box h1{
+            color:#434eae;
+        }
+        .info_box h1:hover{
+            color:darkmagenta;
+        }
+        .info_box h1:after {
+              display:block;
+              content: '';
+              border-bottom: solid 3px ;
+              border-color:darkmagenta;
+              transform: scaleX(0);  
+              transition: transform 250ms ease-in-out;
+            }
+         .info_box h1:hover:after {
+              transform: scaleX(1);
+         }
+        .info_box span{
+            font-size: 16px;
+            color: #000;
+        }
+        .info_box p{
+            display: inline-block;
+            line-height: 1.3;
+            color: #434eae;
+            position: relative;
+        }
+        .info_box p:hover{
+            display:inline-block;
+            border-bottom:solid 2px #434eae;
+            transition:1s ease;
+        }
+        
+        a img:hover{
+            transform:scale(1.3,1.3);
+            transition:0.5s;
+        }
+        foot {
+            color: #ffffff;
+            background-color: #7b7b7b;
+            height: 30px;
+            margin:0;
+            letter-spacing:1px;
+            text-align:center;
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+            width:100%;
+            height:25px;
+            display:block;
+        }
+        .search {
+          width: 100%;
+          position: relative
+        }
+        .searchTerm {
+          float: left;
+          width: 131%;
+          border: 3px solid #00B4CC;
+          padding: 15px;
+          height: 20px;
+          border-radius: 5px;
+          outline: none;
+          color: #9DBFAF;
+          margin-left:-108px;
+          background-color: black;
+        }
+        .searchTerm:focus{
+          color: #00B4CC;
+        }
+        .searchButton {
+          position: absolute;  
+          right: -50px;
+          width: 40px;
+          height: 36px;
+          border: 1px solid #00B4CC;
+          background: #00B4CC;
+          text-align: center;
+          color: #fff;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+        /*Resize the wrap to see the search bar change!*/
+        .wrap{
+          width: 383px;
+          position: absolute;
+          top: 288px;
+          height:36px;
+          left: 1094px;
+          transform: translate(-50%, -50%);
+          background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <img src="http://www.desolationmorris.com/wp-content/uploads/2017/12/rotten-apples-sex-misconduct-dm-entertainment-news-header-01.png" />
+        <nav>
+            <a href="">首頁</a>
+            <a href="">上映中</a>
+            <a href="">預告片</a>
+            <a href="">排行榜</a>
+            <a href="">新聞影評</a>
+            <a href="">更多資訊</a>
+        </nav>
+    </header>
+    <div class="abgne_tab">
+        <ul class="tabs">
+            <li><a href="#tab1">專題報導</a></li>
+            <li><a href="#tab2">影評</a></li>
+            <li><a href="#tab3">電影新聞</a></li>
+        </ul>
+
+        <div class="tab_container">
+            <div id="tab1" class="tab_content">
+                <li>                <a href="https://movies.yahoo.com.tw/post/169110241992/強壓巨石強森馮迪索榮登2017年影星票房排行榜冠軍">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/3f9fe44c449f2f49990741062c3469e8/tumblr_inline_p1rzfyRjXE1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>強壓巨石強森！馮迪索榮登2017年影星票房排行榜冠軍...</h1>                            <span>馮迪索和巨石強森不僅因《玩命關頭8》幕後齟齬而鬧得沸沸揚揚，如今就連在富比世的2017年影星票房排行榜上，最終也是由兩人一決雌雄，並由馮迪索強壓巨石強森，...... <p>詳全文</p></span>                            <div class="day">2017-12-30</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169107221207/007製片下一任龐德可能是黑人或女性">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/494109cf83fde844bfd58d58d07ece99/tumblr_inline_p1rrutN80B1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>007製片：下一任龐德可能是黑人或女性</h1>                            <span>儘管下一任龐德究竟要由誰來飾演，目前仍在未定之天，但製片芭芭拉布洛可里暗示，未來人選可能會採取更大膽的走向。作為龐德電影片廠Eon製片公司的共同老闆，芭芭...... <p>詳全文</p></span>                            <div class="day">2017-12-30</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169102783202/被封2017最爛片光靈上線三天吸1100萬次觀賞">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/3f863f95a87e76832e3d60df0d9e20e2/tumblr_inline_p1rhz1bejy1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -11.5896%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>被封2017最爛片？《光靈》上線三天吸1100萬次觀賞...</h1>                            <span>或許是出自好奇，又或許，被封為「2017年最爛電影」其實並不是什麼壞事。根據Netflix透露，由威爾史密斯主演的科幻新片《光靈》儘管慘遭影評文誅筆伐，但...... <p>詳全文</p></span>                            <div class="day">2017-12-30</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169102706482/網路抗議不斷設於巴黎恐攻的法國愛情片遭取消播映">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/425424e75410b44672cf3482558abc9c/tumblr_inline_p1rhtt8IDf1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>網路抗議不斷！設於巴黎恐攻的法國愛情片遭取消播映</h1>                            <span>法國原本計劃播映一部描述男女主角情不自禁墜入愛河的電視電影，片中舞台卻設於2015年的巴黎巴塔克蘭劇院恐攻事件，而在網路群起連署抗議之後，電影最終決定取消...... <p>詳全文</p></span>                            <div class="day">2017-12-30</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169025642622/全台票房分析star-wars無懸念奪冠-新片票房慘澹">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/86dabe2070195b10f530dffa1d05fd06/tumblr_inline_p1nojyPFrL1t0updm_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -23.5805%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>【全台票房分析】《STAR WARS》無懸念奪冠　新片票房...</h1>                            <span>yahoo奇摩電影本周票房排名變動不大，橫空殺出的《STAR WARS：最後的絕地武士》無懸念奪下票房寶座，與上週 4 天票房相加，收穫 8504 萬，以...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168818013887/高過艾爾帕西諾勞勃狄尼洛穿上恨天高拍愛爾蘭人">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/9acad54b1de61c94b75984aa99147435/tumblr_inline_p1d18lwhio1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -4.70129%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>高過艾爾帕西諾！勞勃狄尼洛穿上恨天高拍《愛爾蘭人》</h1>                            <span>在新片《愛爾蘭人》的拍片現場上，馬汀史柯西斯用了一種相當聰明的方式，來解決勞勃狄尼洛和艾爾帕西諾身高相同的問題。 在穿上一雙鞋底加厚的恨天高之後，由勞勃狄...... <p>詳全文</p></span>                            <div class="day">2017-12-22</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168817897487/不如上一集最後的絕地武士玩具需求量大幅下滑">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/f1540471f55d003621e0f0b65fcd6293/tumblr_inline_p1d0xcAQ301tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>不如上一集！《最後的絕地武士》玩具需求量大幅下滑</h1>                            <span>看來在今年的聖誕樹下，應該看不太到最高領袖史諾克的絨毛玩具了。根據媒體報導，分析師點出《Star Wars：最後的絕地武士》相關玩具的需求量出現了大幅下滑...... <p>詳全文</p></span>                            <div class="day">2017-12-22</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168812444982/全台票房分析東方快車奪冠-可可口碑長紅">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/a5ebabaff3eaccb5d038dd9eb4d12bcd/tumblr_inline_p1cxneOMF51t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>【全台票房分析】《東方快車》奪冠 《可可》口碑長紅</h1>                            <span>國家電影中心自本月起每週公告週票房成績，小編將持續為大家介紹最新的票房數字。上周（12/11-12/17）票房紀錄今日揭曉，最受矚目的《STAR WARS...... <p>詳全文</p></span>                            <div class="day">2017-12-22</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168760746977/伊恩麥克連早期女星會用肉體交換演出機會">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/574d86a64eb403663028abf2e6157477/tumblr_inline_p1a0soPDSL1t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>伊恩麥克連：早期女星會用肉體交換演出機會</h1>                            <span>伊恩麥克連近來引發了一波爭議，因為他表示，六零年代的女星往往願意用肉體交換演出機會。 伊恩麥克連是在牛津大學辯論社的一場座談會上作出這番言論。「有些人必須...... <p>詳全文</p></span>                            <div class="day">2017-12-21</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168760652622/空中滑翔千黛亞在大娛樂家中化身為蜘蛛人">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/ea7aed696732913a4963a2cbeebb7529/tumblr_inline_p1a03i7L1A1tyobkz_540.png" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>空中滑翔！千黛亞在《大娛樂家》中化身為蜘蛛人</h1>                            <span>在今年的《蜘蛛人：返校日》中，千黛亞交出了大銀幕處女秀，並飾演蜜雪兒一角（也就是MJ）；但得要等到《大娛樂家》，她才終於有機會化身為蜘蛛人。 在這部音樂劇...... <p>詳全文</p></span>                            <div class="day">2017-12-21</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168758299252/柴克艾弗隆我拍海灘救護隊阿公歐買尬是為了錢">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/e8cfaf03d65516b82d63842d6f12086b/tumblr_inline_p19w47M1Wn1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>柴克艾弗隆：我拍《海灘救護隊》、《阿公歐買尬》是為了錢...</h1>                            <span>柴克艾弗隆和千黛亞的共同之處不只有《大娛樂家》而已：儘管彼此之間相差將近十歲，但在他們先後進軍好萊塢、轉戰大銀幕之前，兩人一開始都是先在迪士尼頻道上嶄露頭...... <p>詳全文</p></span>                            <div class="day">2017-12-21</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168758318662/克里斯汀貝爾不由白人男性當家好萊塢會更好">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/31ffb49f8c821a1d7c3a8fddc289fb3a/tumblr_inline_p19w5gntsE1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>克里斯汀貝爾：不由白人男性當家，好萊塢會更好</h1>                            <span>克里斯汀貝爾宣稱，如果不是由白人男性當家作主的話，好萊塢、甚至是整個美國，都會變得更好。 這位英國男星是在AOL Build Series線上訪談中作此表...... <p>詳全文</p></span>                            <div class="day">2017-12-21</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168701843327/爭論路克天行者的命運馬克漢米爾曾和導演大起衝突">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/bf73f1c3f9ac39fed49fca3a4decef4e/tumblr_inline_p16vdatWhl1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -1.32467%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>爭論路克天行者的命運！馬克漢米爾曾和導演大起衝突</h1>                            <span>編導萊恩強森近來打開話匣子，大談自己曾經因為《Star Wars：最後的絕地武士》中路克天行者一角的劇情安排，而和馬克漢米爾爆發了一場激烈衝突。今年稍早，...... <p>詳全文</p></span>                            <div class="day">2017-12-19</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168701746897/打鐵趁熱jj亞柏蘭已向迪士尼提出star-wars-9劇情走向">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/c5f490f1f41c45356e186ba1b1a7b998/tumblr_inline_p16v81B4OF1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -8.14403%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>打鐵趁熱！JJ亞柏蘭已向迪士尼提出《Star Wars 9...</h1>                            <span>儘管《Star Wars：最後的絕地武士》才剛上映，但根據報導指出，目前正在籌備《Star Wars 9》的JJ亞柏蘭已經向迪士尼提出了劇情走向。 JJ亞...... <p>詳全文</p></span>                            <div class="day">2017-12-19</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168664006412/yahoo奇摩電影網友滿意榜總回顧-2017眼淚指數特別高">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/ea15feeb31963d61036d61f2638b67ef/tumblr_inline_p14zmxCNbE1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>Yahoo奇摩電影網友滿意榜總回顧 2017眼淚指數特別高...</h1>                            <span>yahoo奇摩電影【文／膝關節】每年雅虎滿意榜年終結算成績時，都算是一份讓網友們回顧整年度影片好評度的口碑，如果你還沒有看過這些影片，很有可能就是你今年剛...... <p>詳全文</p></span>                            <div class="day">2017-12-18</div>                        </div>                    </div>                </a>            </li>
+            </div>
+            <div id="tab2" class="tab_content">
+                <li>                <a href="https://movies.yahoo.com.tw/post/169062856597/假面的告白聖鹿之死">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/80457bd9dc4a294f6a325cd96d858800/tumblr_inline_p1piqxGGgy1t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>假面的告白《聖鹿之死》</h1>                            <span>聖鹿之死【文／陸厚成】觀看《聖鹿之死》所引發的恐怖感，來自發現角色是自我的投射，卻看見從未自覺的醜惡。 導演尤格‧藍西莫以現代寓言方式，完成這部心理驚悚電...... <p>詳全文</p></span>                            <div class="day">2017-12-29</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/168819379432/只因為愛star-wars最後的絕地武士">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/9e9d92b69e4e3d3be66571d5734713dc/tumblr_inline_p1d4x9Cgs21tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>只因為愛《STAR WARS：最後的絕地武士》</h1>                            <span>STAR WARS：最後的絕地武士【文／陸厚成】越是光明，黑暗越深刻。 星際大戰第八部曲劇情分為兩條主線，第一是原力覺醒的芮找到絕地武士─路克，希望他重回...... <p>詳全文</p></span>                            <div class="day">2017-12-22</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/166312949582/銀翼殺手2049科幻的意志">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/460a0f8ec0ff80c1ed21d754368da332/tumblr_inline_oxp31p6oji1t0updm_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -26.9601%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《銀翼殺手2049》科幻的意志</h1>                            <span>銀翼殺手2049【文／陸厚成】人類的存在就是一次又一次的反抗過程。複製人也是。 Blade Runner銀翼殺手是政府一項有給職，配置在警局的獨立作業單位...... <p>詳全文</p></span>                            <div class="day">2017-10-12</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/164290978827/一次溫柔的歷史回眸謝謝你在世界的角落找到我">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/de485bcd54230699ffc9a9c992af5ae1/tumblr_inline_outzwzxSmw1t0updm_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -9.5671%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>一次溫柔的歷史回眸《謝謝你，在世界的角落找到我》</h1>                            <span>【文／楊元鈴】動畫一直是電影中很奇妙的類型，因為是畫的，所以先天本質上就不同於真實影像的寫實感，卻也因為繪製創作的自由度，讓動畫電影得以在真實與幻想、記憶...... <p>詳全文</p></span>                            <div class="day">2017-08-17</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/163359700107/絕對理性的感性敦克爾克大行動dunkirk">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/cab91dc805f229ed30ce672d135a68a4/tumblr_inline_otl7peWwtV1t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>絕對理性的感性：《敦克爾克大行動》（Dunkirk）...</h1>                            <span>【文／艾莫西】始終以科幻為創作範疇的導演克里斯多福諾蘭（Christopher Nolan），以其天馬行空與驚人想像力，總讓影迷拜倒在他無懈可擊的劇本設計...... <p>詳全文</p></span>                            <div class="day">2017-07-24</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/162316859432/神鬼傳奇闇黑宇宙序幕">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/3b3053e89b0009695110c843d491173a/tumblr_inline_os7kc3g3pj1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -23.5548%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《神鬼傳奇》闇黑宇宙序幕</h1>                            <span>【文／雀雀】如果你對《神鬼傳奇》抱持著錯誤的期待（例如說希望再度看見布蘭登費雪1999年版印第安納瓊斯的冒險奇幻風格，或者期待預告所呈現湯姆克魯斯Styl...... <p>詳全文</p></span>                            <div class="day">2017-06-27</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/162316485187/神力女超人類man-男人都是如此糟糕">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/2d6ad9a58a60d3605db58d25091604f4/tumblr_inline_os7jlr51wk1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -4.68216%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《神力女超》人類（Man, 男人）都是如此糟糕？</h1>                            <span>【文／雀雀】《神力女超人》是第一部女性超級雄獨立電影，劇情捨棄過去DC電影中一直刻意想將宇宙中幾個重要角色都帶入電影的企圖，《神力女超人》僅僅只有在開頭與...... <p>詳全文</p></span>                            <div class="day">2017-06-27</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/162316441892/加勒比海盜-神鬼奇航死無對證期待下一個女船長">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/8a9387b344876677121e71517b53e01a/tumblr_inline_os7jikjqCL1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -29.0714%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《加勒比海盜 神鬼奇航：死無對證》期待下一個女船長？...</h1>                            <span>【文／雀雀】距離《神鬼奇航：鬼盜船魔咒》上映的2003年，已經足足的14個年頭，這一系列絕對是21世紀最成功也最有知名的電影原創，不僅讓強尼戴普終於在提姆...... <p>詳全文</p></span>                            <div class="day">2017-06-27</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/162109672982/風火水土之外第五元素">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/ff39135fc4381720ecc0bc2bc941be3f/tumblr_inline_os56z1WJFX1t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>風火水土之外《第五元素》</h1>                            <span>【文／楊元鈴】早在蜜拉喬娃維琪成為《惡靈古堡》的殺殭屍女英雄之前，早在史嘉蕾喬韓森成為 《露西》的女超人和《復仇者聯盟》的黑寡婦之前，甚至早在安潔麗娜裘麗...... <p>詳全文</p></span>                            <div class="day">2017-06-22</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/160683480157/目擊者驚悚好片中的優秀演技">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/fa6aaae370395ace7a878608805fdf53/tumblr_inline_onxij31EPv1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -15.1897%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《目擊者》驚悚好片中的優秀演技</h1>                            <span>【文／雀雀】《目擊者》號稱2017年春假檔最強台片，在PTT與社群網路鄉民間口碑熱傳中，由《紅衣小女孩》導演程偉豪再度出擊，除了峰迴路轉的劇情鋪排與意想不...... <p>詳全文</p></span>                            <div class="day">2017-05-15</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/160683089672/良知與憤怒造就真正的人羅根logan有透劇請慎入">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/2f90b55e696867de7902e78b8a5f9876/tumblr_inline_om68acQu5i1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -5.84416%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>良知與憤怒造就真正的人：《羅根》（Logan）（有透劇，請...</h1>                            <span>【文／艾莫西劇照提供／福斯電影】台灣戲劇霹靂火中有句深刻的台詞「若有神仙作，作誰想作乞丐。」這句話吐露了每個人身上的身不由己，放在【Ｘ戰警】系列也是相去不...... <p>詳全文</p></span>                            <div class="day">2017-05-15</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/160682608857/健忘村萌萌der寶島居民亂世寓言">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/3091f0840b41d406bee7b1743561ded3/tumblr_inline_ojybfqhiD71tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>《健忘村》：萌萌der寶島居民亂世寓言</h1>                            <span>【文／雀雀】喜歡陳玉勳的電影，不只是因為他的電影幽默好笑，而是他的片總能讓我們更看清楚自己。在《熱帶魚》中台灣囝仔躲到被綁架的小孩身上而大人化身為愛財的文...... <p>詳全文</p></span>                            <div class="day">2017-05-15</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/160260501382/成熟只是一種選擇春嬌救志明love-off-the-cuff">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/c62b8e8c0b9348fa75060b6b900e5bd6/tumblr_inline_opdh98qffl1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -2.87021%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>成熟只是一種選擇：《春嬌救志明》（Love Off the...</h1>                            <span>【文／艾莫西、劇照提供／華映娛樂、甲上電影】1999年，五月天發行了第一張同名創作專輯，其中一首台語歌曲〈志明與春嬌〉，傳唱大街小巷，這是屬於六年級生的台...... <p>詳全文</p></span>                            <div class="day">2017-05-03</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/162280733347/尊嚴的質量我是布萊克i-daniel-blake">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/0aa66db0d8d94036e5130f204abd8bed/tumblr_inline_os5we0lult1t0updm_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>尊嚴的質量：《我是布萊克》（I, Daniel Blake...</h1>                            <span>【文 / 艾莫西】看完電影都過兩週了，想起肯洛區的《我是布萊克》還是有點激動。看肯洛區的電影，就像是用顯微鏡看那些電視新聞中只給三分鐘篇幅的人生，我們可以...... <p>詳全文</p></span>                            <div class="day">2017-01-09</div>                        </div>                    </div>                </a>            </li>
+            </div>
+            <div id="tab3" class="tab_content">
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169179251232/2018開春最強動作鉅片機器之血-耗資20億台幣遠赴雪梨歌劇院取景拍攝">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/cbc595fa8c5963858f5f76ca3ac6680f/tumblr_inline_p1vdqj0A1h1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>2018開春最強動作鉅片《機器之血》 耗資20億台幣遠赴雪...</h1>
+                                <span>
+                                    機器之血2018年開春最強動作科幻片《機器之血》，由國際動作巨星成龍、亞洲天王羅志祥、甜心女神歐陽娜娜領銜主演，《機器之血》是成龍親自擔任監製與導演張立嘉......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2018-01-01</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169074190272/大娛樂家之外盤點-21-世紀的經典歌舞片">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/618af80213efec9b0ae08b3b348b09d1/tumblr_inline_p1q7wd8Npg1ummt0r_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -7.14499%; height: 100%; width: auto;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>《大娛樂家》之外，盤點 21 世紀的經典歌舞片</h1>
+                                <span>
+                                    影劇圈圈雖然沒趕上歌舞片的年代，但 2000 年後的影壇似乎又開始流行歌舞片，不算迪士尼的歌舞動畫，每一兩年總會有一部令人喜愛討論度高的歌舞電影出現。許多......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2017-12-29</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169074002537/老娘叫譚雅怎麼演瑪格羅比自爆秘訣就是這樣我找到了">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/4c37cede533eaaa08aa5a63c69104f9b/tumblr_inline_p1q7i4JKwW1ummt0r_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>《老娘叫譚雅》怎麼演？瑪格羅比自爆秘訣：就是這樣，我找到了...</h1>
+                                <span>
+                                    老娘叫譚雅由女星 瑪格羅比主演的（Margot Robbie）《老娘叫譚雅》（I, Tonya），在影展放映後的口碑不俗，並持續在年末的獎季發光發熱，瑪格......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2017-12-29</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169073796657/12猛漢克里斯漢斯沃-完美化身特種騎兵-度假騎馬爆筋露肌-裸身搞笑秀眼技">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/eba892035e27bb62bc0b72084c708c63/tumblr_inline_p1q727iF4N1tyobkz_540.jpg" alt="" style="display: block;margin: 0px;height: auto;width: 100%;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>《12猛漢》克里斯漢斯沃 完美化身特種騎兵 度假騎馬爆筋露...</h1>
+                                <span>
+                                    12猛漢近年因《雷神索爾》系列人氣爆紅、片約不斷的克里斯漢斯沃 Chris Hemsworth在將於1月19日上映的史詩級戰爭鉅作《12猛漢》（12 St......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2017-12-29</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169073697072/多情動物大受國際好評新電影帶您探索婚姻感情新面相">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/d454cc184e67b5e32ee0a70994dd1e42/tumblr_inline_p1q6v7qSz01tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>《多情動物》大受國際好評新電影，帶您探索婚姻感情新面相...</h1>
+                                <span>
+                                    多情動物二度造訪過台灣，愛喝台灣茶，欣賞侯孝賢電影，喜歡下廚的法國才子導演吉爾布都 (Gilles Bourdos)， 新作《多情動物&gt; 八月份在第74屆......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2017-12-29</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://movies.yahoo.com.tw/post/169069598252/杜汶澤首執導演筒空手道-親自試鏡被痛打到廁所放聲喊痛">
+                        <div class="news_content">
+                            <div class="foto">
+                                <div class="fotoinner">
+                                    <img src="https://78.media.tumblr.com/1180c8637c482f405f4613512dfcba8c/tumblr_inline_p1pwjf0p4h1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h1>杜汶澤首執導演筒《空手道》 親自試鏡被痛打到廁所放聲喊痛...</h1>
+                                <span>
+                                    空手道杜汶澤首部自編自導自演，更邀日本武術大師倉田保昭與香港玉女明星鄧麗欣攜手合作的武打動作新片《空手道》，即將於明年1月5日在台上映。主演香港愛情電影部......
+                                    <p>詳全文</p>
+                                </span>
+                                <div class="day">2017-12-29</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169066951647/高更愛在他鄉就是喜歡未成年-盤點藝術大師的蘿莉控精彩事蹟">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/e414ee0687c3c686ca46f208aedbf7b2/tumblr_inline_p1pq6wJOQ91tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -29.4228%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《高更：愛在他鄉》就是喜歡未成年！ 盤點藝術大師的「蘿莉控...</h1>                            <span>高更：愛在他鄉藝術家的情史豐富已經不是新聞，但很多人不知道的是某些藝術家的多情與風流，其實大多與「蘿莉控」、「老少配」、「戀童癖」等字眼脫不了關係。席勒，...... <p>詳全文</p></span>                            <div class="day">2017-12-29</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169064101272/幸福路上細數小時候的單純回憶-蔡依林桂綸鎂眾人話幸福-我們是否成為理想中的大人">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/3f66045e3b8a5e3e4db36e03085f9649/tumblr_inline_p1pkq2vnVE1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -11.1991%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《幸福路上》細數小時候的單純回憶 蔡依林、桂綸鎂眾人話幸福...</h1>                            <span>幸福路上跨年不只要圍爐！歲末年終盤點今年的努力，我們是否還走在「幸褔路上」？沒有什麼是把長大更迷惘的事情！還記得小時候，每一個人就跟林淑琪一樣，總是羨慕著...... <p>詳全文</p></span>                            <div class="day">2017-12-29</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169062155962/天才棋士聚首逆境棋蹟特映會又精彩又感動">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/a59b045f78de09eb8c3ed534eada76b0/tumblr_inline_p1phnpPqnL1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>天才棋士聚首《逆境棋蹟》特映會，又精彩又感動！</h1>                            <span>逆境棋蹟《逆境棋蹟》於歲末(12/27)在西門町真善美劇院舉行特映會，大批民眾老早就頂著寒風等候劃位，可見期待。呼應劇情，現場還特別請到了台北市西洋棋協會...... <p>詳全文</p></span>                            <div class="day">2017-12-29</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169060544922/屍蹤7號房送影迷獨家新年賀禮-lucky-7看電影享早鳥優惠">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/1a0061950d5115bbd28dbc78e9be38bf/tumblr_inline_p1pf4byTV21tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -8.78332%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《屍蹤7號房》送影迷獨家新年賀禮　LUCKY 7看電影享早...</h1>                            <span>屍蹤7號房由韓國導演李容承所執導結合人氣偶像都敬秀與實力派演員申河均所主演的新片《屍蹤7號房》，這部描寫韓國社會底層小人物熱血求生的黑色喜劇，獲得眾多影評...... <p>詳全文</p></span>                            <div class="day">2017-12-29</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169035677825/2017-最夯美劇非法下載影集排行榜新世紀福爾摩斯新進榜冠亞軍一定猜的到">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/c4330d66d64e04a2fe45c7d9cb2c2dea/tumblr_inline_p1ob6aMMgr1ummt0r_540.png" alt="" style="display: block; margin: 0px 0px 0px -8.94814%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>2017 最夯美劇？非法下載影集排行榜：《新世紀福爾摩斯》...</h1>                            <span>網站《TorrentFreak》報導了2017年種子檔案（Torrented）下載的影集排名，毫無懸念HBO《冰與火之歌：權力遊戲》（Game of Th...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169035579740/東方快車謀殺案導演欲籌劃-阿嘉莎偵探小說電影宇宙">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/b1f5b59a143c63112dc6b56702190fcb/tumblr_inline_p1oayhNu4G1ummt0r_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -4.68216%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《東方快車謀殺案》導演欲籌劃 阿嘉莎偵探小說電影宇宙...</h1>                            <span>由導演 肯尼斯布萊納（Kenneth Branagh）自導自演的《東方快車謀殺案》（Murder on the Orient Express），成功開出亮...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169035601215/生平最滿意吉勒摩戴托羅水底情深讓你戀上愛情愛上電影">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/4ab92414d266c5b7a8660da14ed1b44d/tumblr_inline_p1ob067Y951ummt0r_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -7.12501%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>生平最滿意！吉勒摩戴托羅：《水底情深》讓你戀上愛情、愛上電...</h1>                            <span>水底情深《水底情深》（The Shape of Water）的導演 吉勒摩戴托羅（Guillermo del Toro）聊到這部新片的故事，他說：「片子的...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169035316142/小猫巴克里天王御用配音-屈中恆獻聲大反派">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/31eaeb1197c171f88421c1f897f5fa2e/tumblr_inline_p1oaeb97dN1tyobkz_540.jpg" alt="" style="display: block; margin: 0px 0px 0px -29.0714%; height: 100%; width: auto;">                            </div>                        </div>                        <div class="info_box">                            <h1>《小猫巴克里》「天王」御用配音 屈中恆獻聲大反派</h1>                            <span>榮獲多項國際影展肯定的臺灣動畫電影《小猫巴克里》，明天全臺溫馨上映，此片集結兩岸及好萊塢動畫菁英，共動員將近500人參與製作。今晚舉行電影首映會，導演邱立...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+                <li>                <a href="https://movies.yahoo.com.tw/post/169035201322/前奧運選手受困雪山-我要活下去見證求生奇蹟">                    <div class="news_content">                        <div class="foto">                            <div class="fotoinner">                                <img src="https://78.media.tumblr.com/60a6deb80984a6f41f10bfd27d953fa5/tumblr_inline_p1oa4yBw1k1tyobkz_540.jpg" alt="" style="display: block; margin: 0px; height: auto; width: 100%;">                            </div>                        </div>                        <div class="info_box">                            <h1>前奧運選手受困雪山 《我要活下去》見證求生奇蹟</h1>                            <span>不可思議的奇蹟生還故事登上大銀幕！由喬許哈奈特（Josh Hartnett）領銜主演的《我要活下去》（6 Below: Miracle on the Mo...... <p>詳全文</p></span>                            <div class="day">2017-12-28</div>                        </div>                    </div>                </a>            </li>
+            </div>
+        </div>
+    </div>
+    <foot>
+        &copy; 2017 FAT Movie Cinema
+    </foot>
+</body>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var winTop = $(window).scrollTop();
+            if (winTop >= 30) {
+                $("body").addClass("sticky-header");
+            } else {
+                $("body").removeClass("sticky-header");
+            }//if-else
+        });//win func.
+    });//ready func.
+
+    $(function () {
+        // 預設顯示第一個 Tab
+        var _showTab = 0;
+        $('.abgne_tab').each(function () {
+            // 目前的頁籤區塊
+            var $tab = $(this);
+
+            var $defaultLi = $('ul.tabs li', $tab).eq(_showTab).addClass('active');
+            $($defaultLi.find('a').attr('href')).siblings().hide();
+
+            // 當 li 頁籤被點擊時...
+            // 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+            $('ul.tabs li', $tab).click(function () {
+                // 找出 li 中的超連結 href(#id)
+                var $this = $(this),
+                    _clickTab = $this.find('a').attr('href');
+                // 把目前點擊到的 li 頁籤加上 .active
+                // 並把兄弟元素中有 .active 的都移除 class
+                $this.addClass('active').siblings('.active').removeClass('active');
+                // 淡入相對應的內容並隱藏兄弟元素
+                $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+                return false;
+            }).find('a').focus(function () {
+                this.blur();
+            });
+        });
+    });
+
+</script>
+</html>

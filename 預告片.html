@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+    <title></title>
+    <style>
+        * {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font: inherit;
+          font-size: 100%;
+          vertical-align: baseline;
+          line-height: 1;
+        }
+
+        body {
+          background-color: #131313;
+          font-family: helvetica, arial, sans-serif;
+          font-size: 16px;
+          padding-top: 330px;
+          -moz-transition: padding-top 0.5s ease;
+          -o-transition: padding-top 0.5s ease;
+          -webkit-transition: padding-top 0.5s ease;
+          transition: padding-top 0.5s ease;
+        }
+
+        header {
+          width: 100%;
+          height: 500px;
+          background-color: #000000;
+          text-align: center;
+          position: relative;
+          position: fixed;
+          top: 0;
+          overflow: hidden;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+        header nav {
+          position: absolute;
+          bottom: 0;
+          height: 60px;
+          line-height: 60px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        header nav a {
+          color: #fff;
+          display: inline-block;
+          padding: 10px 30px;
+          line-height: 1;
+          text-decoration: none;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+        }
+        header nav a:hover {
+          -moz-box-shadow: 0 0 0 1px #fff;
+          -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+        }
+
+        h2 {
+          font-size: 34px;
+          text-transform: uppercase;
+          font-weight: 100;
+          line-height: 2;
+          color: #2c3e50;
+        }
+
+        p {
+          margin-bottom: 2rem;
+          line-height: 25px;
+          color: #7f8c8d;
+        }
+
+        .wrapper {
+          width: 800px;
+          margin: 0 auto;
+
+        }
+
+        /* Sticky Header Style */
+        body.sticky-header {
+          padding-top: 100px;
+        }
+        body.sticky-header header {
+          height: 60px;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        body.sticky-header header h1 {
+          -moz-transform: scale(0, 0);
+          -ms-transform: scale(0, 0);
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+        }
+        footer {
+            color: #ffffff;
+            background-color: #7b7b7b;
+            height: 30px;
+            margin:0;
+            letter-spacing:1px;
+            text-align:center;
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+            width:100%;
+            height:25px;
+            display:block;
+        }
+        p{
+            font-size:20px;
+        }
+
+        #number-page{
+            margin:20px auto 20px auto;
+            width: 200px;
+            height: 30px;
+        }
+        #number-page a{
+            font-size:25px;
+            padding:10px 18px 10px 18px;
+            text-decoration:none;
+            text-align:center;
+            text-decoration:none;
+        }
+        #number-page a:hover{
+            background:white;
+            border-radius:10px;
+            color:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="muteYouTubeVideoPlayer"></div>
+        <nav>
+            <a href="">首頁</a>
+            <a href="">上映中</a>
+            <a href="">預告片</a>
+            <a href="">排行榜</a>
+            <a href="">新聞影評</a>
+            <a href="">更多資訊</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+            <div id="main">
+                <div class="inner">
+                    <div class="thumbnails">
+                        <div class="box">
+                            <a href="https://youtu.be/k8E628alSsE" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>英倫對決</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/k8E628alSsE" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Nascetur nunc varius commodo</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Nascetur nunc varius commodo</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Nascetur nunc varius commodo</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Nascetur nunc varius commodo</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="" /></a>
+                            <div class="inner">
+                                <h3>Nascetur nunc varius commodo</h3>
+                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
+                                <a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            </div>
+    <div id="number-page">
+        <a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>
+    </div>
+            <footer>
+                &copy; 2017 FAT Movie Cinema
+            </footer>
+        </body>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var winTop = $(window).scrollTop();
+            if (winTop >= 30) {
+                $("body").addClass("sticky-header");
+            } else {
+                $("body").removeClass("sticky-header");
+            }
+        });
+    });
+
+    
+    
+     function onYouTubeIframeAPIReady() {
+      var player;
+      player = new YT.Player('muteYouTubeVideoPlayer',{
+        videoId: 'jXmPkWDeAcE', // YouTube 影片ID
+        width: 1530,               // 播放器寬度 (px)
+        height: 460,              // 播放器高度 (px)
+        playerVars: {
+        autoplay: 1,        // 在讀取時自動播放影片
+        controls: 1,        // 在播放器顯示暫停／播放按鈕
+        showinfo: 0,        // 隱藏影片標題
+        modestbranding:0,  // 隱藏YouTube Logo
+        loop: 1,            // 讓影片循環播放
+        fs: 1,              // 隱藏全螢幕按鈕
+        cc_load_policty: 0, // 隱藏字幕
+        iv_load_policy: 3,  // 隱藏影片註解
+        autohide: 0,         /* 當播放影片時隱藏影片控制列*/
+        rel: 0,
+        playlist: 'EY5HJ_HeV7s',
+        
+        },
+        events: {
+          onReady: function(e) {
+            e.target.mute();
+          }
+        }
+      });
+     }
+</script>
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.poptrox.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</html>

@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8">
+    <link rel="Shortcut Icon" type="image/x-icon" href="圖庫/FAT-logo.png" />
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+    <title>電影網頁</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <style>
+        * {
+            margin: 0;
+            font-family: Futura, "Trebuchet MS", Arial, sans-serif, Georgia, Times,微軟正黑體;
+        }
+        header, section, footer, aside, nav, article {
+            display: block;
+        }
+        body {
+            color: #666666;
+            background-color: #131313;
+            background-position: center;
+            line-height: 1.4em;
+            margin: 0px;
+        }
+        #header h1 a {
+            display: block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 3em;
+            font-weight: 900;
+            text-decoration: none;
+            text-align: center;
+        }
+        #header{
+            position: relative;
+            background: #ddd url(圖庫/popcorn-movie-party-entertainment.jpg) no-repeat center;
+            background-size: cover;
+            padding: 10em 0em;
+		    text-align: center;
+            position:relative;
+            border-radius:10px;
+        }
+        #header span{
+            top:-242px;
+            position:relative;
+        }
+        h1 {
+            text-align: left;
+            width: 940px;
+            height: 315px;
+            margin: 0px;
+            padding: 50px 0px 5px 30px;
+            position:relative;
+            left:266px;
+        }
+        h2 {
+            text-align: left;
+            color: deeppink;
+            border-bottom: solid purple;
+        }
+        table, tr, td {
+            border-collapse: collapse;
+            position:relative;
+        }
+        footer {
+            clear: both;
+            color: #ffffff;
+            background-color: #7b7b7b;
+            height: 30px;
+            margin:0;
+            letter-spacing:1px;
+            text-align:center;
+        }
+        nav{
+            display: inline-block;
+			padding: 0em 3em;
+			border-radius: 40px;
+			background: #131313;
+            top:-240px;
+            left:210px;
+            position:relative;
+
+        }
+        nav > ul > li
+		{
+			display: inline-block;
+		}
+		nav > ul > li:last-child
+		{
+			padding-right: 0;
+		}
+        header span {
+            hieght:300px;
+        }
+		nav > ul > li > a{
+			display: block;
+			padding: 1.3em 2em;
+			letter-spacing: 1px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 200;
+			font-size: 1em;
+			outline: 0;
+			color: #7b7b7b;
+            position:relative;
+		}
+        nav li a {
+            color: #ffffff;
+        }
+        nav li a:hover, nav li a.current {
+            color: #000000;
+        }
+        ul{
+            padding:0
+        }
+        .drop-down-menu ul {
+            padding:0;
+            background:#131313;
+            position: absolute;
+            z-index: 99;
+            top: 100%;
+            min-width: 140px;
+            border-radius:10px;
+        }
+        .drop-down-menu ul li {
+            text-align:center;
+            display:block;
+            padding:0;
+            border-bottom:0.5px solid;
+            border-color:#7b7b7b;
+            color:#7b7b7b;
+        }
+        .drop-down-menu ul li:last-child{
+            border:none;
+        }
+ 
+        .drop-down-menu ul { /*隱藏次選單*/
+            left: 99999px;
+            padding:0;
+            opacity: 0;
+            -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+        }
+
+        .drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+            opacity: 1;
+            transition: opacity 0.3s;
+            left: 860px;
+            border-right:solid 1px;
+            padding:0;
+        }
+        section {
+            margin: 1%;
+            width: 659px;
+            padding:0 0 0 0 ;
+            color:white;
+        }
+
+        a {
+            color: #de6581;
+            text-decoration: none;
+        }
+
+        footer {
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+        }
+
+        #dropbtn {
+            background-color:#404040;
+            color: #808080;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            right: 0;
+        }
+        #dropbtn:hover{
+            display:none;
+        }
+
+        .dropdown {
+            position: fixed;
+            bottom: 200px;
+            right: 0;
+            /*width: 100px; (會無形給一個大小，可能導致位置不如預想)*/
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            bottom:200px;
+            right: 0;
+            width: 130px;
+            min-width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1; /*最上層*/
+        }
+
+        .dropdown-content a { /*block 的特性是可以設定高度（height）、寬度（width）、上方與下方距離，像是 div、p、ul、li 均屬 block。而 inline 高度與寬度都不能設定，文字或圖片所佔的寬度就是他的寬度，像是 span、a、input、img、em 均屬 inline。*/
+            color: dimgray;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+   
+</head>
+<body>
+        <header>
+            <div id="header">
+                    <h1><a href="#">FAT Movie</a></h1>
+                    <span>今天想看甚麼</span>
+            </div>
+            <nav>
+                <ul class="drop-down-menu">
+                    <li><a href="#homepage">首頁</a></li>
+                    <li><a href="">上映電影</a></li>
+                    <li><a href="file:///C:/Users/MengZeng/Desktop/%E7%B6%B2%E9%A0%81%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/%E9%A0%90%E5%91%8A%E7%89%87.html">預告片</a></li>
+                    <li><a href="">排行榜</a></li>
+                    <li><a href="">新聞影評</a></li>
+                    <li><a href="">更多資訊</a>
+                        <ul>
+                            <li><a href="#">訂票系統</a></li>
+                            <li><a href="#">預約電影</a></li>
+                            <li><a href="#">電影院分布</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <caption><h2 id="最近電影">上映電影</h2></caption>
+            <div id="card">
+                <div class="card1">
+                    <img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" alt="英倫對決" style="width:200px" target="blank">
+                    <div class="container">
+                        <h4><b>英倫對決</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div class="card2">
+                    <img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/VQDjFJJMKDCGYIerOtLK-1984x2835.JPG" alt="看見5%的奇蹟" style="width:200px" target="blank">
+                    <div class="container">
+                        <h4><b>看見5%的奇蹟</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div class="card3">
+                    <img src="https://tw.movies.yahoo.com/i/o/production/movies/September2017/dPhHwbs3sRShzjkxxP2k-992x1418.jpg" alt="大佛普拉斯" style="width:200px" target="blank">
+                    <div class="container">
+                        <h4><b>大佛普拉斯</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div class="card4">
+                    <img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/August2017/5HGRe99yZNTHKf0YnUAY-1000x1425.jpg" alt="聽見向陽之聲" style="width:200px" target="blank">
+                    <div class="container">
+                        <h4><b>聽見向陽之聲</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+                <div class="card5">
+                    <img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/August2017/5HGRe99yZNTHKf0YnUAY-1000x1425.jpg" alt="聽見向陽之聲" style="width:200px" target="blank">
+                    <div class="container">
+                        <h4><b>聽見向陽之聲</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <table border="1">
+                <caption><h2 id="最新預告片">預告片</h2></caption>
+                <tr>
+                    <td rowspan="3">
+                        <iframe width="350" height="310" src="https://www.youtube.com/embed/m3ACl3tc4oA" frameborder="0" allowfullscreen></iframe>
+                    <td rowspan="3">
+                        <iframe width="350" height="310" src="https://www.youtube.com/embed/AYaum_k0eu4" frameborder="0" allowfullscreen></iframe>
+                    <td rowspan="3">
+                        <iframe width="350" height="310" src="https://www.youtube.com/embed/2ww89Ky1mC8" frameborder="0" allowfullscreen></iframe>
+                    <td rowspan="3">
+                        <iframe width="350" height="310" src="https://www.youtube.com/embed/Up4EsugoFRg" frameborder="0" allowfullscreen></iframe>
+                <tr>
+                <tr>
+                <tr>
+                    <td rowspan="2"><h3>母親</h3><br>2分鐘新片速報
+                    <td rowspan="2"><h3>追龍</h3><br>甄子丹劉德華兩大巨星全新力作
+                    <td rowspan="2"><h3>水底情深</h3><br>首波奇幻預告
+                    <td rowspan="2"><h3>推倒白宮的男人</h3><br>史上最強FBI-最新中文預告
+                <tr>
+            </table>
+            <br>
+            <br>
+            <table border="1" width="900">
+                <caption><h2 id="網友期待排行榜">排行榜</h2></caption>
+                <tr>
+                    <td rowspan="3" width="300" align="center">
+                        <img src="https://tw.movies.yahoo.com/x/r/w420/i/o/production/movies/August2017/GPimbKXqfBesVUa0m0ZI-1480x2163.jpg"
+                             alt="網友期待排行榜" width="220" height="300">
+                    <td>
+                        <h3>1. 解憂雜貨店</h3><br>上映日期:9月29日 <hr>
+                        <h3>2. 雷神索爾3:諸神</h3><br>上映日期:9月29日 <hr>
+                        <h3>3. 英倫對決</h3>上映日期:9月29日
+                <tr>
+                <tr>
+            </table>
+            <br>
+            <br>
+            <table border="1" width="900">
+                <caption><h2 id="網友滿意榜">新聞影評</h2></caption>
+                <tr>
+                    <td rowspan="3" width="300" align="center">
+                        <img src="https://tw.movies.yahoo.com/i/o/production/movies/September2017/RQv8qmhTJxBmAw2LFB1c-1984x2835.jpg"
+                             alt="追龍" width="220" height="300">
+                    <td>
+                        <h3>1. 追龍</h3><br>上映日期:9月29日 <hr>
+                        <h3>2. 獵殺星期一</h3><br>上映日期:9月29日<hr>
+                        <h3>3. 金牌特務:機密對決</h3>上映日期:9月29日
+                <tr>
+                <tr>
+            </table>
+            <fieldset>
+                <legend><h3 id="預約看電影">更多資訊</h3></legend>
+                <form name="booking">
+                    <button type="button"
+                            onclick="date()">
+                        現在時間
+                    </button>
+                    <p id="nowtime"></p>
+                    大名: <input name="name" type="text"><br>
+                    性別: <input name="sex" type="radio" value="male">男
+                    <input name="sex" type="radio" value="female">女<br>
+                    電話: <input name="phone" type="tel">
+                    <hr>
+                    預約電影: <select name="choice">
+                        <optgroup label="國外">
+                            <option>母親
+                            <option>金牌特務-機密對決
+                            <option>李爾王
+                            <option>英倫對決
+                        </optgroup>
+                        <optgroup label="國內">
+                            <option>啥..還有捐軸
+                            <option>52赫茲我愛你
+                            <option>小孟子
+                        </optgroup>
+                    </select>
+                    <hr>
+                    選擇日期: <input name="selectdate" type="date" value="2017-10-03"><br>
+                    電影時間: <input name="seetime" type="time" value="18:00"><br>
+                    人數: <input name="score" type="number" value="1"><br>
+                    特別服務:<br>
+                    <textarea name="wantlist" rows="3" cols="20"></textarea><br>
+                    <input type="submit" value="確認預訂">
+            </fieldset>
+        </section>
+
+        <div class="dropdown">
+            <button id="dropbtn">本頁標籤</button>
+            <div class="dropdown-content">
+                <a href="#最近電影">上映電影</a>
+                <a href="#最新預告片">預告片</a>
+                <a href="#網友期待排行榜">排行榜</a>
+                <a href="#網友滿意榜">新聞影評</a>
+                <a href="#預約看電影">更多資訊</a>
+            </div>
+        </div>
+    <div class="m-backtotop" aria-hidden="true">
+        <div class="arrow">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <div class="text">
+            Back to top
+        </div>
+    </div>        
+    <footer>
+        &copy; 2017 FAT Movie Cinema
+    </footer>
+</body>
+<script src="js/index.js"></script>
+<script src='https://use.fontawesome.com/b5bf1bd49e.js'></script>
+    <script>
+        function date() {
+            document.getElementById('nowtime').innerHTML = Date();
+        }
+</script>
+</html>

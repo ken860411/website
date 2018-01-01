@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-tw"> 
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <title></title>
+    <style>
+
+* {
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font: inherit;
+          font-size: 100%;
+          vertical-align: baseline;
+          line-height: 1;
+        }
+
+        body {
+          background-color: #131313;
+          font-family: helvetica, arial, sans-serif;
+          font-size: 16px;
+          padding-top: 330px;
+          -moz-transition: padding-top 0.5s ease;
+          -o-transition: padding-top 0.5s ease;
+          -webkit-transition: padding-top 0.5s ease;
+          transition: padding-top 0.5s ease;
+        }
+
+        header {
+          width: 100%;
+          height: 100px;
+          background-color: #000000;
+          text-align: center;
+          position: relative;
+          position: fixed;
+          top: 0;
+          overflow: hidden;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+        header nav {
+          position: absolute;
+          bottom: 0;
+          height: 60px;
+          line-height: 60px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        header nav a {
+          color: #fff;
+          display: inline-block;
+          padding: 10px 30px;
+          line-height: 1;
+          text-decoration: none;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+        }
+        header nav a:hover {
+          -moz-box-shadow: 0 0 0 1px #fff;
+          -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+        }
+
+        h2 {
+          font-size: 34px;
+          text-transform: uppercase;
+          font-weight: 100;
+          line-height: 2;
+          color: #2c3e50;
+        }
+
+        p {
+          margin-bottom: 2rem;
+          line-height: 25px;
+          color: #7f8c8d;
+        }
+
+        .wrapper {
+          width: 800px;
+          margin-top:-160px;
+          margin-left:auto;
+          margin-right:auto;
+
+        }
+
+        /* Sticky Header Style */
+        body.sticky-header {
+          padding-top: 100px;
+        }
+        body.sticky-header header {
+          height: 60px;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        body.sticky-header header h1 {
+          -moz-transform: scale(0, 0);
+          -ms-transform: scale(0, 0);
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+        }
+        footer {
+            color: #ffffff;
+            background-color: #7b7b7b;
+            height: 30px;
+            margin:0;
+            letter-spacing:1px;
+            text-align:center;
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+            width:100%;
+            height:25px;
+            display:block;
+        }
+        p{
+            font-size:20px;
+        }
+
+section {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Sticky Header Style */
+/* ---------------------------------------- */
+body.sticky-header {
+  padding-top: 100px;
+}
+body.sticky-header header {
+  height: 60px;
+  background-color: rgba(123, 123, 123, 0.5);
+}
+body.sticky-header header h1 {
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+#box_animate {
+            position:relative;
+            width:fit-content;
+            margin:0 0 0 0;
+        }
+        #ul_box {
+            list-style:none;
+            width:fit-content;
+            height:50px;
+            padding:5px;
+        }
+        #ul_box li {
+            display:block;
+            width:800px;
+            height:100px;
+            /*background-color:lightgray;*/
+            margin-left:40px;
+            /*overflow:hidden;*/
+        }
+            #ul_box li div {
+                position:relative;
+                width:800px;
+                height:100px;
+                text-align:center;
+                font-size:36px;
+                font-weight:bolder;
+                line-height:100px;
+                top:-80%;
+                padding:35px;
+            }
+        #n1_box div {
+            background:linear-gradient(to bottom,#ff3019 0%,#cf0404 100%);
+            border-radius:0px 0px 10px 10px;
+        }
+        #n2_box div {
+            background:linear-gradient(to bottom,#f9c667 0%,#f79621 100%);
+            border-radius:0px 0px 10px 10px;
+        }
+        #n3_box div {
+            background:linear-gradient(to bottom,#f1e767 0%,#feb645 100%);
+            border-radius:0px 0px 10px 10px;
+        }
+        #n4_box div {
+            background:linear-gradient(to bottom,#cdeb8e 0%,#a5c956 100%);
+            border-radius:0px 0px 10px 10px;
+        }
+        #n5_box div {
+            background:linear-gradient(to bottom,#cfe7fa 0%,#6393c1 100%);
+            border-radius:0px 0px 10px 10px;
+        }
+        .btm_div {
+            position:relative;
+            width:100px;
+            height:20px;
+            z-index:10;
+            font-size:30px;
+            text-align:center;
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sticky Header Pow!</h1>
+        <nav>
+            <a href="">首頁</a>
+            <a href="">上映中</a>
+            <a href="">預告片</a>
+            <a href="">排行榜</a>
+            <a href="">新聞影評</a>
+            <a href="">更多資訊</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <div id="box_animate">
+            <ul id="ul_box">
+                <li id="n1_box"><p class="btm_div">Google</p><div>Google</div></li>
+                <li id="n2_box"><p class="btm_div">HTML</p><div>HTML</div></li>
+                <li id="n3_box"><p class="btm_div">CSS</p><div>CSS</div></li>
+                <li id="n4_box"><p class="btm_div">JavaScript</p><div>JavaScript</div></li>
+                <li id="n5_box"><p class="btm_div">JQuery</p><div>jQuery</div></li>
+            </ul>
+        </div>
+
+        <div class="theater">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var winTop = $(window).scrollTop();
+            if (winTop >= 30) {
+                $("body").addClass("sticky-header");
+            } else {
+                $("body").removeClass("sticky-header");
+            }//if-else
+        });//win func.
+    });//ready func.
+
+    
+    $(function () {
+        $(".btm_div").hover(function () {//hover自帶兩種事件
+            //滑鼠移入
+            $(this)
+            .css("opacity", 0)
+            .next("div").animate({ left: 0 }, 1000, "easeOutElastic");
+            //.next("div").stop(true.false).animate({top:0},800,"easeOutBounce");
+            //.stop(stopAll,goToEnd);
+        },
+        function () {
+            //滑鼠移出
+            $(this)
+            .css("opacity", 1)
+            .next("div").animate({left:"-180%"}, 1000, "easeOutQuart");
+            //.next("div").stop(true,false).animate({ top: "-80%" }, 1000, "easeOutQuart");
+            //.stop(stopAll,goToEnd);
+        });
+    });
+</script>
+</html>

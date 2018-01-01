@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>上映</title>
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          font: inherit;
+          font-size: 100%;
+          vertical-align: baseline;
+          line-height: 1;
+          position:relative;
+        }
+
+        body {
+          background-color: #131313;
+          font-family: helvetica, arial, sans-serif,Futura, "Trebuchet MS", sans-serif, Georgia, Times,微軟正黑體;
+          font-size: 16px;
+          padding-top: 330px;
+          -moz-transition: padding-top 0.5s ease;
+          -o-transition: padding-top 0.5s ease;
+          -webkit-transition: padding-top 0.5s ease;
+          transition: padding-top 0.5s ease;
+        }
+
+        header {
+          width: 100%;
+          height: 300px;
+          background-color: black;
+          text-align: center;
+          position: relative;
+          position: fixed;
+          top: 0;
+          overflow: hidden;
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+        }
+
+        header img {
+          width:300px;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+        }
+        header nav {
+          position: absolute;
+          bottom: 0;
+          height: 60px;
+          line-height: 60px;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+        header nav a {
+          color: #fff;
+          display: inline-block;
+          padding: 10px 15px;
+          line-height: 1;
+          text-decoration: none;
+          -moz-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+        }
+        header nav a:hover {
+          -moz-box-shadow: 0 0 0 1px #fff;
+          -webkit-box-shadow: 0 0 0 1px #fff;
+          box-shadow: 0 0 0 1px #fff;
+        }
+
+        h2 {
+          font-size: 34px;
+          text-transform: uppercase;
+          font-weight: 100;
+          line-height: 2;
+          color: #2c3e50;
+        }
+
+        p {
+          margin-bottom: 2rem;
+          line-height: 2;
+          color: #7f8c8d;
+        }
+
+        .wrapper {
+          width: 800px;
+          margin: 0 auto;
+        }
+
+        /* Sticky Header Style */
+        body.sticky-header {
+          padding-top: 100px;
+          z-index:100;
+        }
+        body.sticky-header header {
+          height: 60px;
+          background-color: black;
+          z-index:100;
+        }
+        body.sticky-header header h1 {
+          -moz-transform: scale(0, 0);
+          -ms-transform: scale(0, 0);
+          -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+          z-index:100;
+        }
+
+        h2 {
+            text-align: left;
+            color: deeppink;
+            border-bottom: solid purple;
+        }
+        #content {
+            width:918px;
+            display:table;
+            padding: 0px 40px 0px 40px;
+            background:#1a1a1a;
+            margin-left: -65px;
+        }
+        .movie_list{
+            display: table-row;
+            list-style:none;
+        }
+        .movie_photo{
+            display: table-cell;
+            padding: 10px 11px 10px 10px;
+            box-sizing: border-box;
+            position: relative;
+            width: 27%;
+            vertical-align: top;
+        }
+        .movie_info{
+            width: 77%;
+            display: table-cell;
+            padding: 20px 0 60px;
+            box-sizing: border-box;
+            font-size: 18px;
+            line-height: 1.5;
+            position: relative;
+        }
+        #number-page{
+            margin:20px auto 20px auto;
+            width: 200px;
+            height: 30px;
+        }
+        #number-page a{
+            font-size:25px;
+            padding:10px 18px 10px 18px;
+            text-decoration:none;
+            text-align:center;
+        }
+        #number-page a:hover{
+            background:white;
+            border-radius:10px;
+            color:blue;
+        }
+         foot {
+            color: #ffffff;
+            background-color: #7b7b7b;
+            height: 30px;
+            margin:0;
+            letter-spacing:1px;
+            text-align:center;
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+            width:100%;
+            height:25px;
+            display:block;
+        }
+         a{
+           text-decoration:none;
+           color:#7f8c8d;
+         }
+         a:hover{
+             color:lightpink;
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headphoto">
+            <img src="https://78.media.tumblr.com/c2dcdcbcb64558cf773627213b7cb4bd/tumblr_inline_p1ic7rncFi1t0updm_1280.jpg" />
+            <img src="https://78.media.tumblr.com/61024e64f4600372684acb1a8b480ff7/tumblr_inline_p1ic7sRIOf1t0updm_1280.jpg" />
+            <img src="https://78.media.tumblr.com/8ba304ae3a87550ebe2930d705689c99/tumblr_inline_p1ic7tqJJy1t0updm_1280.jpg" />
+            <img src="https://78.media.tumblr.com/eca23a2ee7164aa09358b57a1633fe3c/tumblr_inline_p1ic7tErF71t0updm_1280.jpg" />
+            <img src="https://78.media.tumblr.com/a2f2ebe0f8290db8828e41f1fe6c6f27/tumblr_inline_p1ic7uk5NG1t0updm_1280.jpg" />
+        </div>
+        <nav>
+            <a href="">首頁</a>
+            <a href="">上映中</a>
+            <a href="">預告片</a>
+            <a href="">排行榜</a>
+            <a href="">新聞影評</a>
+            <a href="">更多資訊</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+       
+        <div id="content">
+            <span id="title"><h2>現正熱映</h2></span>
+            <div class="movie_list">
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p><a href="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg">
+    上映日期 ： 2017-12-22
+    ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+</a>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p>
+                            上映日期 ： 2017-12-22
+                            ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p>
+                            上映日期 ： 2017-12-22
+                            ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p>
+                            上映日期 ： 2017-12-22
+                            ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p>
+                            上映日期 ： 2017-12-22
+                            ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="movie_photo"><img src="https://movies.tw.campaign.yahoo.net/i/o/production/movies/July2017/PwHmn2WPEin06FqrHCoK-2362x3364.jpg" width="200px" height="300px" /></div>
+                    <div class="movie_info">
+                        <p>
+                            上映日期 ： 2017-12-22
+                            ★ 《浴血任務系列》動作巨星杜夫朗格全新類型混搭之作 ★ 美國權威影評網站「爛蕃茄」100%滿分推薦 ★ 宛如《超自然檔案》搬上大銀幕，看惡靈剋星力抗不死邪魔！ ★ 2016 德州奧斯汀奇幻影展 ★ 2016 西班牙錫切斯奇幻影展 ★ 2017 布... 詳全文
+                        </p>
+                    </div>
+                </li>
+            </div>
+        </div>
+        <div id="number-page">
+            <a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a>
+        </div>
+
+        <div class="m-backtotop" aria-hidden="true">
+            <div class="arrow">
+                <i class="fa fa-arrow-up"></i>
+            </div>
+            <div class="text">
+                Back to top
+            </div>
+        </div>
+      </div>
+      <foot>
+            &copy; 2017 FAT Movie Cinema
+      </foot>
+</body>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var winTop = $(window).scrollTop();
+            if (winTop >= 30) {
+                $("body").addClass("sticky-header");
+            } else {
+                $("body").removeClass("sticky-header");
+            }//if-else
+        });//win func.
+    });//ready func.
+</script>
+<script src="js/index.js"></script>
+<script src='https://use.fontawesome.com/b5bf1bd49e.js'></script>
+</html>
